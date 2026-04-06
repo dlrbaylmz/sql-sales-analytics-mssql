@@ -54,3 +54,21 @@ CREATE TABLE order_details (
     discount FLOAT,
     profit FLOAT
 )
+
+SELECT DB_NAME() AS current_db
+
+
+UPDATE od
+SET od.sales = rs.sales_clean
+FROM order_details od
+JOIN raw_superstore rs
+    ON od.order_id = rs.order_id
+   AND od.product_id = rs.product_id
+
+
+UPDATE od
+SET od.profit = rs.profit_clean
+FROM order_details od
+JOIN raw_superstore rs
+    ON od.order_id = rs.order_id
+   AND od.product_id = rs.product_id
