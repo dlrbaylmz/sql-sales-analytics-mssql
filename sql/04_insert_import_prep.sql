@@ -263,4 +263,8 @@ SELECT COUNT(*)
 FROM order_details
 WHERE profit IS NULL
 
+SELECT TOP 20 profit
+FROM order_details
+
+
 
